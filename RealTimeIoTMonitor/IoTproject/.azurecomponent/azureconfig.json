@@ -1,0 +1,18 @@
+{
+    "componentConfigs": [
+        {
+            "id": "72b5a4c5-94f5-30a9-ca2b-e54e2bac9851",
+            "folder": "",
+            "name": "",
+            "dependencies": [],
+            "type": "IoTHub",
+            "componentInfo": {
+                "values": {
+                    "iotHubConnectionString": "HostName=iglooconf-iothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=HKtwO3+2kLeHBS0+mUauK2P+Pk0GIaQDR3sBD0QhdqA=",
+                    "eventHubConnectionString": "Endpoint=sb://ihsuprodmwhres013dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=HKtwO3+2kLeHBS0+mUauK2P+Pk0GIaQDR3sBD0QhdqA=",
+                    "eventHubConnectionPath": "iothub-ehub-iglooconf-1138153-c096a88146"
+                }
+            }
+        }
+    ]
+}

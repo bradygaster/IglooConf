@@ -1,0 +1,30 @@
+﻿@page
+@model RealTimeCloud.Pages.ControlModel
+@{
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <label for="customRange2">X</label>
+            <input type="range" class="warning custom-range" id="x" data-axis="x" value="0" min="0.0" max="3.14" step="0.01">
+        </div>
+    <div class="col-sm">
+        <div class="col-sm">
+            <label for="customRange2">Y</label>
+            <input type="range" class="custom-range" id="y" data-axis="y" value="0" min="0.0" max="3.14" step="0.01">
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="col-sm">
+            <label for="customRange2">Z</label>
+            <input type="range" class="custom-range" id="z" data-axis="z" value="0" min="0.0" max="3.14" step="0.01">
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="~/js/signalr.js"></script>
+    <script src="~/js/realtime.js"></script>
+}
