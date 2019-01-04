@@ -35,7 +35,7 @@ namespace RealTimeCloud
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddSignalR();
+            services.AddSignalR().AddAzureSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +56,7 @@ namespace RealTimeCloud
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            app.UseSignalR((routes) => {
+            app.UseAzureSignalR((routes) => {
                   routes.MapHub<RotationHub>("/hubs/rotation");
             });
             app.UseMvc();
