@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
 
@@ -21,13 +22,27 @@ namespace RealTimeCloud.Hubs
         public async void UnlockAxis(string axis)
         {
             _logger.LogInformation("UnlockAxis", axis);
-            await Clients.Others.SendCoreAsync("controlUnlocked", new [] { axis });
+            await Clients.Others.SendCoreAsync("controlUnlocked", new object[] { axis });
         }
 
         public async void RotateOnAxis(string axis, string value)
         {
             _logger.LogInformation("RotateOnAxis", axis);
-            await Clients.Others.SendCoreAsync("rotated", new string[] { axis, value });
+            await Clients.Others.SendCoreAsync("rotated", new object[] { axis, value });
+        }
+
+        public async void Rotate(double x, double y, double z)
+        {
+            await Clients.Others.SendCoreAsync("fullyrotated", new object[] 
+            {
+                Transform(x), Transform(y), Transform(z)
+            });
+        }
+
+        private double Transform(double oldValue)
+        {
+            //NewValue = (((OldValue - OldMin) * (NewMax - NewMin)) / (OldMax - OldMin)) + NewMin
+            return (((oldValue - -10) * ((Math.PI * 2) - 0)) / (10 - -10)) + (Math.PI * 2);
         }
     }
 }

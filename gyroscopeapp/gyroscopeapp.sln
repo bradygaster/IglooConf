@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeCloud", "..\RealTimeCloud\RealTimeCloud.csproj", "{E6990EDF-78E1-4793-A5E4-8FBF60708248}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Release|iPhone.Build.0 = Release|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{E6990EDF-78E1-4793-A5E4-8FBF60708248}.AppStore|iPhone.Build.0 = Debug|Any CPU
+	EndGlobalSection
+EndGlobal
