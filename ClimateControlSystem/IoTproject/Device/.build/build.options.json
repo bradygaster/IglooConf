@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "",
+  "builtInLibrariesFolders": "/Applications/Arduino.app/Contents/Java/libraries",
+  "customBuildProperties": "build.path=/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/.build,build.warn_data_percentage=75,runtime.tools.arm-none-eabi-gcc.path=/Users/bradygaster/Library/Arduino15/packages/AZ3166/tools/arm-none-eabi-gcc/5_4-2016q3,runtime.tools.arm-none-eabi-gcc-5_4-2016q3.path=/Users/bradygaster/Library/Arduino15/packages/AZ3166/tools/arm-none-eabi-gcc/5_4-2016q3,runtime.tools.openocd.path=/Users/bradygaster/Library/Arduino15/packages/AZ3166/tools/openocd/0.10.0,runtime.tools.openocd-0.10.0.path=/Users/bradygaster/Library/Arduino15/packages/AZ3166/tools/openocd/0.10.0",
+  "fqbn": "AZ3166:stm32f4:MXCHIP_AZ3166:upload_method=OpenOCDMethod",
+  "hardwareFolders": "/Applications/Arduino.app/Contents/Java/hardware,/Users/bradygaster/Library/Arduino15/packages",
+  "otherLibrariesFolders": "/Users/bradygaster/Documents/Arduino/libraries",
+  "runtime.ide.version": "10808",
+  "sketchLocation": "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino",
+  "toolsFolders": "/Applications/Arduino.app/Contents/Java/tools-builder,/Applications/Arduino.app/Contents/Java/hardware/tools/avr,/Users/bradygaster/Library/Arduino15/packages"
+}
