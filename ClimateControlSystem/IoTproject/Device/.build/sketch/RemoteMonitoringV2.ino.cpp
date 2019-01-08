@@ -1,5 +1,5 @@
-#line 1 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
-#line 1 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 1 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
+#line 1 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. 
 // To get started please visit https://microsoft.github.io/azure-iot-developer-kit/docs/projects/remote-monitoring/?utm_source=ArduinoExtension&utm_medium=ReleaseNote&utm_campaign=VSCode
@@ -12,7 +12,7 @@
 #include "SystemTime.h"
 #include "SystemTickCounter.h"
 
-#define INTERVAL 5000
+#define INTERVAL 1000
 
 static bool isConnected = false;
 
@@ -42,23 +42,23 @@ const double deviceLongitude =-3.797997;
 
 const char *twinProperties="{\"Protocol\": \"MQTT\", \"SupportedMethods\": \"Reboot,FirmwareUpdate,LedColor\", \"Telemetry\": { \"%s\": {\"Interval\": \"%s\",\"MessageTemplate\": \"{\\\"temperature\\\":${temperature},\\\"temperature_unit\\\":\\\"${temperature_unit}\\\", \\\"humidity\\\":${humidity},\\\"humidity_unit\\\":\\\"${humidity_unit}\\\",\\\"pressure\\\":${pressure},\\\"pressure_unit\\\":\\\"${pressure_unit}\\\"}\",\"MessageSchema\": {\"Name\": \"%s\",\"Format\": \"JSON\",\"Fields\": {\"temperature\": \"Double\", \"temperature_unit\": \"Text\",\"humidity\": \"Double\",\"humidity_unit\": \"Text\",\"pressure\": \"Double\",\"pressure_unit\": \"Text\" } } } },\"Type\": \"%s\",\"Firmware\": \"%s\",\"Model\":\"AZ3166\",\"FirmwareUpdateStatus\": \"%s\",\"Location\": \"%s\",\"Latitude\": %f,\"Longitude\": %f}";
 
-#line 43 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 43 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 bool sendDeviceInfo();
-#line 50 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 50 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 void twinCallback(DEVICE_TWIN_UPDATE_STATE updateState, const unsigned char *payLoad, int length);
-#line 68 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 68 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 int device_method_callback(const char *methodName, const unsigned char *payload, int length, unsigned char **response, int *responseLength);
-#line 98 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 98 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 void InitWiFi();
-#line 116 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 116 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 void sendData(const char *data, const char *schema);
-#line 130 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 130 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 void showSensors();
-#line 157 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 157 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 void setup();
-#line 204 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 204 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 void loop();
-#line 43 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+#line 43 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 bool sendDeviceInfo()
 {
   char reportedProperties[2048];

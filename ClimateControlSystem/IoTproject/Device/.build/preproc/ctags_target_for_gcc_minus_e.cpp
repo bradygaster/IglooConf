@@ -1,16 +1,16 @@
-# 1 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
-# 1 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+# 1 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
+# 1 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
 // Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. 
 // To get started please visit https://microsoft.github.io/azure-iot-developer-kit/docs/projects/remote-monitoring/?utm_source=ArduinoExtension&utm_medium=ReleaseNote&utm_campaign=VSCode
-# 5 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 2
-# 6 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 2
-# 7 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 2
-# 8 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 2
-# 9 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 2
-# 10 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 2
-# 11 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 2
-# 12 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 2
+# 5 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 2
+# 6 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 2
+# 7 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 2
+# 8 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 2
+# 9 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 2
+# 10 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 2
+# 11 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 2
+# 12 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 2
 
 
 
@@ -51,10 +51,10 @@ bool sendDeviceInfo()
 
 void twinCallback(DEVICE_TWIN_UPDATE_STATE updateState, const unsigned char *payLoad, int length){
   do{{ if (0) { (void)printf("*** Twin State: %s",updateState?"Complete":"Partial"); } { LOGGER_LOG l = xlogging_get_log_function(); if (l != 
-# 51 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 3 4
+# 51 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 3 4
  __null
-# 51 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
- ) l(AZ_LOG_INFO, "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino", __func__, 51, 0x01, "*** Twin State: %s",updateState?"Complete":"Partial"); } }; }while((void)0,0);
+# 51 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
+ ) l(AZ_LOG_INFO, "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino", __func__, 51, 0x01, "*** Twin State: %s",updateState?"Complete":"Partial"); } }; }while((void)0,0);
 }
 
 RGB_LED rgbLed;
@@ -74,10 +74,10 @@ bool doReset=false;
 int device_method_callback(const char *methodName, const unsigned char *payload, int length, unsigned char **response, int *responseLength){
 
   do{{ if (0) { (void)printf("*** Remote method: %s",methodName); } { LOGGER_LOG l = xlogging_get_log_function(); if (l != 
-# 70 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 3 4
+# 70 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 3 4
  __null
-# 70 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
- ) l(AZ_LOG_INFO, "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino", __func__, 70, 0x01, "*** Remote method: %s",methodName); } }; }while((void)0,0);
+# 70 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
+ ) l(AZ_LOG_INFO, "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino", __func__, 70, 0x01, "*** Remote method: %s",methodName); } }; }while((void)0,0);
 
   if(strcmp(methodName,"LedColor")==0){
     int n=sizeof(colors)/sizeof(colors[0]);
@@ -102,10 +102,10 @@ int device_method_callback(const char *methodName, const unsigned char *payload,
   }
 
   do{ { if (0) { (void)printf("*** Remote method: %s not found",methodName); } { LOGGER_LOG l = xlogging_get_log_function(); if (l != 
-# 94 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 3 4
+# 94 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 3 4
  __null
-# 94 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
- ) l(AZ_LOG_ERROR, "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino", __func__, 94, 0x01, "*** Remote method: %s not found",methodName); } }; }while((void)0,0);
+# 94 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
+ ) l(AZ_LOG_ERROR, "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino", __func__, 94, 0x01, "*** Remote method: %s not found",methodName); } }; }while((void)0,0);
   return 500;
 }
 
@@ -129,9 +129,9 @@ void InitWiFi()
 
 void sendData(const char *data, const char *schema){
   time_t t = time(
-# 117 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 3 4
+# 117 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 3 4
                  __null
-# 117 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+# 117 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
                      );
   char buf[sizeof "2011-10-08T07:07:09Z"];
   strftime(buf, sizeof buf, "%FT%TZ", gmtime(&t));
@@ -169,10 +169,10 @@ void showSensors()
   catch(int error)
   {
     do{ { if (0) { (void)printf("*** Read sensor failed: %d",error); } { LOGGER_LOG l = xlogging_get_log_function(); if (l != 
-# 153 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 3 4
+# 153 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 3 4
    __null
-# 153 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
-   ) l(AZ_LOG_ERROR, "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino", __func__, 153, 0x01, "*** Read sensor failed: %d",error); } }; }while((void)0,0);
+# 153 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
+   ) l(AZ_LOG_ERROR, "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino", __func__, 153, 0x01, "*** Read sensor failed: %d",error); } }; }while((void)0,0);
   }
 }
 
@@ -182,16 +182,16 @@ void setup() {
 
   ht_sensor = new HTS221Sensor(*ext_i2c);
   ht_sensor->init(
-# 162 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 3 4
+# 162 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 3 4
                  __null
-# 162 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+# 162 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
                      );
 
   lp_sensor= new LPS22HBSensor(*ext_i2c);
   lp_sensor->init(
-# 165 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 3 4
+# 165 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 3 4
                  __null
-# 165 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
+# 165 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
                      );
 
   //Scan networks and print them into console
@@ -223,10 +223,10 @@ void setup() {
     // Send the Twin data for the Remote Monitoring
     bool infoSent=sendDeviceInfo();
     do{{ if (0) { (void)printf("*** Twin update: %s",infoSent?"yes":"no"); } { LOGGER_LOG l = xlogging_get_log_function(); if (l != 
-# 195 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino" 3 4
+# 195 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino" 3 4
    __null
-# 195 "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino"
-   ) l(AZ_LOG_INFO, "/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/RemoteMonitoringV2.ino", __func__, 195, 0x01, "*** Twin update: %s",infoSent?"yes":"no"); } }; }while((void)0,0);
+# 195 "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino"
+   ) l(AZ_LOG_INFO, "/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/RemoteMonitoringV2.ino", __func__, 195, 0x01, "*** Twin update: %s",infoSent?"yes":"no"); } }; }while((void)0,0);
   }
 }
 
@@ -239,13 +239,13 @@ void loop() {
   // put your main code here, to run repeatedly:
   if(isConnected)
   {
-    if((int)(SystemTickCounterRead() - send_interval_ms)>5000)
+    if((int)(SystemTickCounterRead() - send_interval_ms)>1000)
     {
       showSensors();
       send_interval_ms = SystemTickCounterRead();
     }
 
-    if((int)(SystemTickCounterRead() - reset_interval_ms)>5000){
+    if((int)(SystemTickCounterRead() - reset_interval_ms)>1000){
       if(doReset){
          __NVIC_SystemReset();
       }

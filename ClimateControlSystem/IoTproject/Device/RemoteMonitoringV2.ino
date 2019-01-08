@@ -10,7 +10,7 @@
 #include "SystemTime.h"
 #include "SystemTickCounter.h"
 
-#define INTERVAL 5000
+#define INTERVAL 1000
 
 static bool isConnected = false;
 

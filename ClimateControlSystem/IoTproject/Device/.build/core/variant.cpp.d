@@ -1,4 +1,4 @@
-/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/.build/core/variant.cpp.o: \
+/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/.build/core/variant.cpp.o: \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/variants/MXChip_AZ3166/variant.cpp \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/cores/arduino/system/mbed_config.h \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/variants/MXChip_AZ3166/variant.h \

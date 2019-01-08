@@ -1,4 +1,4 @@
-/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/.build/libraries/Sensors/LSM6DSLSensor.cpp.o: \
+/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/.build/libraries/Sensors/LSM6DSLSensor.cpp.o: \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/libraries/Sensors/src/LSM6DSLSensor.cpp \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/cores/arduino/system/mbed_config.h \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/cores/arduino/system/mbed.h \

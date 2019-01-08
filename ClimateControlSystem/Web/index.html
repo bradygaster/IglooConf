@@ -1,0 +1,195 @@
+<html>
+    <head></head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+        <script src="../node_modules/@aspnet/signalr/dist/browser/signalr.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <style>
+            canvas {
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+            }
+        </style>
+    </body>
+
+    <div style="width: 100%;">
+        <canvas id="temperature" style="width: 45%; display: inline-block;"></canvas>
+        <canvas id="humidity" style="width: 45%; display: inline-block;"></canvas>
+    </div>
+    
+    <button id="addData">Add Data</button>
+
+	<script>
+var samples = 50;
+var speed = 250;
+var temperatureValues = [];
+var temperatureLabels = [];
+var humidityValues = [];
+var humidityLabels = [];
+var value = 0;
+
+temperatureValues.length = samples;
+temperatureLabels.length = samples;
+humidityValues.length = samples;
+humidityLabels.length = samples;
+temperatureValues.fill(0);
+temperatureLabels.fill(0);
+humidityValues.fill(0);
+humidityLabels.fill(0);
+
+function update(t, h) { 
+    temperature.data.datasets.forEach(function(dataset) {
+        temperatureValues.push(t);
+        temperatureValues.shift();
+        temperature.update();
+    });
+    humidity.data.datasets.forEach(function(dataset) {
+        humidityValues.push(h);
+        humidityValues.shift();
+        humidity.update();
+    });
+}
+
+function fakeUpdate() {
+    update(randomValue(60), randomValue(80));
+    fake();
+}
+
+function fake() {
+    setTimeout(() => {
+        fakeUpdate();
+    }, 1000);
+}
+
+function randomValue(max) {
+    return Math.random() * (max - 50) + 50;
+}
+
+var temperature = new Chart(document.getElementById("temperature"),
+{
+    type: 'line',
+    data: {
+        labels: temperatureLabels,
+        datasets: [
+            {
+                label: 'Temperature',
+                fill: false,
+                data: temperatureValues,
+                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                borderColor: 'rgb(255, 99, 132)',
+                borderWidth: 2,
+                lineTension: 0.15,
+                pointRadius: 0
+            }   
+        ]
+    },
+    options: {
+        title: {
+            display: true,
+            text: 'Temperature'
+        },
+        responsive: false,
+        animation: {
+            duration: speed * 1.5,
+            easing: 'linear'
+        },
+        legend: false,
+        scales: {
+            xAxes: [
+                {
+                    display: false
+                }
+            ],
+            yAxes: [
+                {
+                    ticks: {
+                        max: 100,
+                        min: 30
+                    }
+                }
+            ]
+        }
+    }
+});
+
+var humidity = new Chart(document.getElementById("humidity"),
+{
+    type: 'line',
+    data: {
+        labels: humidityLabels,
+        datasets: [
+            {
+                label: 'Humidity',
+                fill: false,
+                data: humidityValues,
+                backgroundColor: 'rgba(99, 99, 255, 0.1)',
+                borderColor: 'rgb(99, 99, 255)',
+                borderWidth: 2,
+                lineTension: 0.15,
+                pointRadius: 0
+            }
+        ]
+    },
+    options: {
+        title: {
+            display: true,
+            text: 'Humidity'
+        },
+        responsive: false,
+        animation: {
+            duration: speed * 1.5,
+            easing: 'linear'
+        },
+        legend: false,
+        scales: {
+            xAxes: [
+                {
+                    display: false
+                }
+            ],
+            yAxes: [
+                {
+                    ticks: {
+                        max: 100,
+                        min: 30
+                    }
+                }
+            ]
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    connect();
+});
+
+var urlBase = "https://iglooconf-functions.azurewebsites.net/api/";
+const axiosConfig = {}
+
+function connect() {
+    axios.post(urlBase + 'negotiate', null, axiosConfig)
+    .then(function(resp) { 
+
+        const options = {
+            accessTokenFactory: function() {
+                return resp.data.accessToken
+            }
+        }
+
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl(resp.data.url, options)
+            .build();
+
+        connection.on('climateDataReceived', function(data) {
+            console.log(data);
+            update(data.temperature, data.humidity);
+        });
+
+        connection.start().catch(function (err) {
+            return console.error(err.toString());
+        });
+    });
+}
+	</script>
+</html>

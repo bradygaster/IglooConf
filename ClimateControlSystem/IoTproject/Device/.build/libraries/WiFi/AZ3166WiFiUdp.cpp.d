@@ -1,4 +1,4 @@
-/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/.build/libraries/WiFi/AZ3166WiFiUdp.cpp.o: \
+/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/.build/libraries/WiFi/AZ3166WiFiUdp.cpp.o: \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/libraries/WiFi/src/AZ3166WiFiUdp.cpp \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/cores/arduino/system/mbed_config.h \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/libraries/WiFi/src/AZ3166WiFi.h \

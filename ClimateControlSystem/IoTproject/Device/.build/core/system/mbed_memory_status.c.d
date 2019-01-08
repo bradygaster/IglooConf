@@ -1,4 +1,4 @@
-/Users/bradygaster/Documents/IoTWorkbenchProjects/examples/devkit_remotemonitoring/Device/.build/core/system/mbed_memory_status.c.o: \
+/Users/bradygaster/source/IglooConf/ClimateControlSystem/IoTproject/Device/.build/core/system/mbed_memory_status.c.o: \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/cores/arduino/system/mbed_memory_status.c \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/cores/arduino/system/mbed_config.h \
  /Users/bradygaster/Library/Arduino15/packages/AZ3166/hardware/stm32f4/1.6.0/system/platform/critical.h \
