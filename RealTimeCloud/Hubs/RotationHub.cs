@@ -33,16 +33,7 @@ namespace RealTimeCloud.Hubs
 
         public async void Rotate(double x, double y, double z)
         {
-            await Clients.Others.SendCoreAsync("fullyrotated", new object[] 
-            {
-                Transform(x), Transform(y), Transform(z)
-            });
-        }
-
-        private double Transform(double oldValue)
-        {
-            //NewValue = (((OldValue - OldMin) * (NewMax - NewMin)) / (OldMax - OldMin)) + NewMin
-            return (((oldValue - -10) * ((Math.PI * 2) - 0)) / (10 - -10)) + (Math.PI * 2);
+            await Clients.Others.SendCoreAsync("fullyrotated", new object[] { x, y, z });
         }
     }
 }

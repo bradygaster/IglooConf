@@ -14,27 +14,49 @@
 <body>
     <div id="content">
         <ul>
-            <li>acceleration x: <span id="accelerationX"></span>g</li>
-            <li>acceleration y: <span id="accelerationY"></span>g</li>
-            <li>acceleration z: <span id="accelerationZ"></span>g</li>
+            <li>alpha (z): <span id="alpha"></span>g</li>
+            <li>beta (x): <span id="beta"></span>g</li>
+            <li>gamma (y): <span id="gamma"></span>g</li>
         </ul>
+        <button id="center">Reset Center!</button>
     </div>
     <script src="/lib/jquery/dist/jquery.js"></script>
     <script src="/js/signalr.js"></script>
     <script src="/js/realtime.js"></script>
     <script type="text/javascript">
 
-if (window.DeviceMotionEvent != undefined) {
-    window.ondevicemotion = function(e) {
-        document.getElementById("accelerationX").innerHTML = e.accelerationIncludingGravity.x;
-        document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y;
-        document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z;
+var lastOrientation, centerOrientation;
 
-        rotate(e.accelerationIncludingGravity.x,
-            e.accelerationIncludingGravity.y,
-            e.accelerationIncludingGravity.z);
+function recenter() {
+    centerOrientation = lastOrientation;
+}
+
+if (window.DeviceOrientationEvent != undefined) {
+    window.ondeviceorientation = (e) => {
+        function toRadians(angle) {
+            return angle * Math.PI / 180;
+        }
+
+        if (!centerOrientation) {
+            centerOrientation = e;
+        }
+
+        lastOrientation = e;
+
+        document.getElementById("alpha").innerHTML = e.alpha;
+        document.getElementById("beta").innerHTML = e.beta;
+        document.getElementById("gamma").innerHTML = e.gamma;
+
+        rotate(
+            toRadians(e.beta - centerOrientation.beta),
+            toRadians(e.gamma - centerOrientation.gamma),
+            toRadians(e.alpha - centerOrientation.alpha));
     }
 }
+
+document.getElementById("center").onclick = () => {
+    centerOrientation = lastOrientation;
+};
 
     </script>
 
