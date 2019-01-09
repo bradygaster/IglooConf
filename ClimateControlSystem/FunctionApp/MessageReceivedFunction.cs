@@ -6,6 +6,8 @@ using System.Net.Http;
 using Microsoft.Azure.WebJobs.Extensions.SignalRService;
 using System.IO;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace FunctionApp
 {
@@ -14,23 +16,26 @@ namespace FunctionApp
         private static HttpClient client = new HttpClient();
 
         [FunctionName("MessageReceivedFunction")]
-        public static async System.Threading.Tasks.Task RunAsync(
-            [EventHubTrigger("iothub-ehub-iglooconf-1138153-c096a88146", Connection = "IoTConnectionString")] EventData message, 
+        [return: Queue("incoming", Connection = "AzureWebJobsStorage")]
+        public static async Task<string> RunAsync(
+            [EventHubTrigger("iothub-ehub-iglooconf-1138153-c096a88146", 
+                Connection = "IoTConnectionString")] EventData message, 
             [SignalR(HubName="climate")] IAsyncCollector<SignalRMessage> messages,
-            TraceWriter log)
+            ILogger log)
         {
-            log.Info($"C# IoT Hub trigger function processed a message: {Encoding.UTF8.GetString(message.Body.Array)}");
+            log.LogInformation($"C# IoT Hub trigger function processed a message: " +
+            	    "{Encoding.UTF8.GetString(message.Body.Array)}");
 
-            dynamic json = JsonConvert.DeserializeObject(
-                Encoding.UTF8.GetString(message.Body.Array)
-            );
+            string json = Encoding.UTF8.GetString(message.Body.Array);
 
             await messages.AddAsync(new SignalRMessage {
                 Target = "climateDataReceived",
                 Arguments = new [] { json }
             });
 
-            log.Info($"Sent temperature data to SignalR.");
+            log.LogInformation($"Sent temperature data to SignalR.");
+
+            return json;
         }
     }
 }

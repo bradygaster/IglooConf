@@ -2,7 +2,7 @@
     <head></head>
     <body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
-        <script src="../node_modules/@aspnet/signalr/dist/browser/signalr.min.js"></script>
+        <script src="node_modules/@aspnet/signalr/dist/browser/signalr.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <style>
             canvas {
@@ -181,7 +181,8 @@ function connect() {
             .withUrl(resp.data.url, options)
             .build();
 
-        connection.on('climateDataReceived', function(data) {
+        connection.on('climateDataReceived', function(json) {
+            var data = JSON.parse(json);
             console.log(data);
             update(data.temperature, data.humidity);
         });
